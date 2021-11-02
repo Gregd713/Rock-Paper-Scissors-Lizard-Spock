@@ -1,0 +1,24 @@
+{
+  "name": "rock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gregd713/Rock-Paper-Scissors-Lizard-Spock.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gregd713/Rock-Paper-Scissors-Lizard-Spock/issues"
+  },
+  "homepage": "https://github.com/Gregd713/Rock-Paper-Scissors-Lizard-Spock#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
