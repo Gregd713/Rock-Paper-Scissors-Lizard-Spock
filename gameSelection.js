@@ -1,71 +1,80 @@
 "Use Strict";
 const prompt =require("prompt-sync")();
+const {Human}=require("./rock");
+const{Hand}=require("./hands")
 
-function singlePlayer(){
-    var handType= console.log("What hand are you playing"+"\n1. Rock"+"\n2. Paper"+"\n3. Scissors"+"\n4. Lizard"+"\n5. Spock"+"\nPlease enter the numerical value for entry");
-    handType=prompt();
-    if(handType===1){return "Rock"}
-    else if(handType===2){return "Paper"}
-    else if(handType===3){return "Scissors"}
-    else if(handType===4){return "Lizard"}
-    else if(handType===5){return "Spock"}
-    var computerChoice=Math.floor(Math.random()*5)+1;
-    if(computerChoice===1){
-        computerChoice="rock";}
-    else if(computerChoice===2){
-        computerChoice="paper";}
-    else if(computerChoice===3){
-        computerChoice="scissors"}
-    else if(computerChoice===4){
-        computerChoice="Lizard"}
-    else if(computerChoice===5){
-        computerChoice="Spock"}
-    var compare =function(choice1,choice2){
-        if(choice1===choice2){
-            return "It's a tie"
-        }
-        if(choice1==="rock"){
-            if(choice2==="scissors"){return"Rock wins!"}
-            else{return "Paper wins!"}
-        }
+// function singlePlayer(){
+//     var handType= parseInt(console.log("What hand are you playing"+"\n1. Rock"+"\n2. Paper"+"\n3. Scissors"+"\n4. Lizard"+"\n5. Spock"+"\nPlease enter the numerical value for entry"));
+//     handType=prompt();
+//     if(handType==1){return "rock"}
+//     else if(handType==2){return "paper"}
+//     else if(handType==3){return "scissors"}
+//     else if(handType==4){return "lizard"}
+//     else if(handType==5){return "spock"}}
+//     var computerChoice=Math.floor(Math.random()*5)+1;
+//     if(computerChoice==1){
+//         computerChoice="rock";}
+//     else if(computerChoice==2){
+//         computerChoice="paper";}
+//     else if(computerChoice==3){
+//         computerChoice="scissors"}
+//     else if(computerChoice==4){
+//         computerChoice="Lizard"}
+//     else if(computerChoice==5){
+//         computerChoice="Spock"}
+//     var compare =function(choice1,choice2){
+//         if(choice1==choice2){
+//             return "It's a tie"
+//         }
+//         if(choice1=="rock"){
+//             if(choice2=="scissors"){return"Rock wins!"}
+//             else{return "Paper wins!"}
+//         }
     
-        if(choice1 === "paper") {
-        if(choice2 === "rock") {
-            return "paper wins";
-        } 
-        else {
-            if(choice2 === "scissors") {
-                return "scissors wins";
-        }
-        }}
-        if(choice1 === "scissors") {
-        if(choice2 === "rock") {
-            return "rock wins";
-        } else {
-            if(choice2 === "paper") {
-                return "scissors wins";
-            }
-        }}
-        if(choice1==="Lizard"){
-            if(choice2==="rock"){return "rock wins"}
-            else{if(choice2==="paper"){return"Lizard wins";}
-        }}
-        if(choice1==="Spock"){
-            if(choice2==="rock"){return "Spock wins"}
-        else if(choice2==="scissors"){return "Spock wins"}
-        else if(choice2==="lizard"){return "Lizard wins"}
-        else{if(choice2==="paper"){return "paper wins"}}
-    }
-    }
-console.log("User Choice: " + handType);
-console.log("Computer Choice: " + computerChoice);
-console.log(compare(handType, computerChoice));
-}
+//         if(choice1 == "paper") {
+//         if(choice2 == "rock") {
+//             return "paper wins";
+//         } 
+//         else {
+//             if(choice2 == "scissors") {
+//                 return "scissors wins";
+//         }
+//         }}
+//         if(choice1 == "scissors") {
+//         if(choice2 == "rock") {
+//             return "rock wins";
+//         } else {
+//             if(choice2 == "paper") {
+//                 return "scissors wins";
+//             }
+//         }}
+//         if(choice1=="lizard"){
+//             if(choice2=="rock"){return "rock wins"}
+//             else{if(choice2=="paper"){return"Lizard wins";}
+//         }}
+//         if(choice1=="Spock"){
+//             if(choice2=="rock"){return "Spock wins"}
+//         else if(choice2=="scissors"){return "Spock wins"}
+//         else if(choice2=="lizard"){return "Lizard wins"}
+//         else{if(choice2=="paper"){return "paper wins"}}
+//     }return choice1+choice2;
+//     }
+// console.log("User Choice: " + handType);
+// console.log("Computer Choice: " + computerChoice);
+// console.log(compare(handType, computerChoice));
+// }
+
 
 function declareWinner(){
 
 }
 class mainMenu {
+
+    constructor(){
+        this.handOne;
+        this.handTwo;
+        this.computer;
+    }
     displayWelcome(){
         console.log("Let's play rock, paper, scissors, lizard, spock");
         // this.fighterTwo = new Robot();
@@ -75,13 +84,20 @@ class mainMenu {
         gameType=prompt();
         if(gameType==1){
             console.log("You have chosen single player");
-            singlePlayer();
+            this.handOne=new Human();
+            this.computer;
+
         }
         else if(gameType==2){
             console.log("You have chosen multiplayer.")
         }
         else{console.log("Invalid entry");
         this.gameSelection();}
+    }
+    gameLogic(){
+        while(this.handOne.score>2&&this.handTwo.score>2){
+            console.log(``)
+        }
     }
     
     // runBattle(){
@@ -120,6 +136,6 @@ class mainMenu {
 }
 
 module.exports={
-    Singleplayer: singlePlayer,
+    // Singleplayer: singlePlayer,
     Main: mainMenu,
 };

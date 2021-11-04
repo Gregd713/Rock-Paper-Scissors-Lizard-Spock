@@ -1,21 +1,23 @@
 "use strict"
 const prompt = require("prompt-sync")();
-const {Fighter} = require("./Fighter");
+const{Hand}=require("./hands")
 
-class Dinosaur extends Fighter{
+class Human extends Hand{
 
     constructor(){
-        console.log("Please choose your hand");
-        let dinoName = prompt();
-        super(dinoName);
+        parseInt(console.log("What hand are you playing"+"\n1. Rock"+"\n2. Paper"+"\n3. Scissors"+"\n4. Lizard"+"\n5. Spock"+"\nPlease enter the numerical value for entry"));
+        var handType = prompt();
+        super(handType);
     }
-
-    hand(opposingFighter){
-        opposingFighter.health = opposingFighter.health - this.attackPower;
-        console.log(`${this.name} the Dinosaur attacked with a BITE for ${this.attackPower} damage!!`);
+     hand(){
+        if(handType==1){return "rock"}
+    else if(handType==2){return "paper"}
+    else if(handType==3){return "scissors"}
+    else if(handType==4){return "lizard"}
+    else if(handType==5){return "spock"}
     } 
 }
 
 module.exports = {
-    Dinosaur: Dinosaur
+    Human: Human
 }
