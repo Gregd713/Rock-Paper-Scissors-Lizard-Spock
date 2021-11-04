@@ -1,12 +1,12 @@
 class Hand{
     constructor(name){
         this.name =name;
-        this.score =0;
-        this.attackPower=1;
+        this.Score =0;
+        this.scored=1;
     }
-    attack(opposingFighter){
-        opposingFighter.score = opposingFighter.score + this.attackPower;
-        console.log(`The attack did ${this.attackPower} damage!! WOW!`)
+    score(addPoint){
+        addPoint.Score = this.Score + this.scored;
+        console.log(`Player who chose ${this.name} has won this round. Rounds won: ${this.Score} `)
 }
 }
 
