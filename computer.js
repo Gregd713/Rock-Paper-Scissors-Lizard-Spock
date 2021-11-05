@@ -20,7 +20,7 @@ class Computer extends Hand{
     }
     score(addPoint){
         addPoint.Score = this.Score + this.scored;
-        console.log(`Player who chose ${this.name} has won this round. Rounds won: ${this.Score} `)
+        console.log(`Computer has won this round. Rounds won: ${this.Score} `)
 }
 }
 
