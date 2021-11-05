@@ -124,10 +124,17 @@ class mainMenu {
         }
         else{console.log("Computer has won!")}
     }
+    playAgain(){
+        let again =console.log("Woud you like to play again? Press 1 for 'yes' 2 for 'no'.")
+        again=prompt();
+        if(again==1){this.gameSelection();}
+        else{console.log("See you next time!");}
+    }
 
     runGame(){
         this.displayWelcome();
         this.gameSelection();
+        this.playAgain();
     }
 }
 
