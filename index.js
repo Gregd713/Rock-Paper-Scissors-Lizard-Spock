@@ -1,7 +1,5 @@
-"use strict";
-const {Main} = require("./gameSelection");
+"use strict"
+const {Game} = require("./game");
 
-let rockPaperScissors= new Main();
-rockPaperScissors.runGame();
-// let roboDinoBattlefield = new Battlefield();
-// roboDinoBattlefield.runGame();
+let testGame = new Game();
+testGame.runGame();

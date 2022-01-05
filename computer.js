@@ -1,29 +1,18 @@
 "use strict"
-const prompt = require("prompt-sync")();
-const{Hand}=require("./hands")
+const { GamePlayer } = require("./player");
 
-class Computer extends Hand{
-
-    constructor(){
-    var computerChoice=Math.floor(Math.random()*5)+1;
-    if(computerChoice==1){
-        computerChoice="rock";}
-    else if(computerChoice==2){
-        computerChoice="paper";}
-    else if(computerChoice==3){
-        computerChoice="scissors"}
-    else if(computerChoice==4){
-        computerChoice="lizard"}
-    else if(computerChoice==5){
-        computerChoice="spock"}
-        super(computerChoice)
+class Computer extends GamePlayer{
+    constructor(name){
+        super(name);
+        this.name = "Computer"
     }
-    score(addPoint){
-        addPoint.Score = this.Score + this.scored;
-        console.log(`Computer has won this round. Rounds won: ${this.Score} `)
-}
-}
+    selectHandGesture(){
+        let aiSelection = this.handGestures[Math.floor(Math.random() * this.handGestures.length)];
+        console.log(aiSelection);
+        return aiSelection;
+    }
+}   
 
 module.exports = {
-    Computer: Computer
+    Computer: Computer,
 }
